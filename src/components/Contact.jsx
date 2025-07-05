@@ -1,43 +1,68 @@
-import React, { useState } from 'react';
+import React from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    emailjs.sendForm(
+      'service_g3iivnk',
+      'template_kzp5zde',
+      e.target,
+      'ENy2WuqgsJfLnt1Pm'
+    )
+      .then(() => {
+        alert('Message sent successfully!');
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('Failed to send message.');
+      });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const res = await fetch("https://fwhbyb2lzl.execute-api.ap-south-1.amazonaws.com/prod/send", 
-    {
-     method: "POST",
-     headers: 
-     {
-      "Content-Type": "application/json",
-     },
-     body: JSON.stringify(formData),
-    });
-
-  const data = await res.json();
-    if (res.status === 200) {
-    alert("Message sent successfully!");
-    } else {
-    alert("Something went wrong: " + data.error);
-    }
-    };
-
-
   return (
-    <section id="contact" className="py-20 px-6 bg-black text-white">
+    <section id="contact" className="py-20 px-6 bg-gray-800 text-white">
       <div className="max-w-xl mx-auto">
-        <h2 className="text-3xl font-bold text-red-500 mb-6 text-center">Contact Me</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-red-500">Contact Me</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <input type="text" name="name" placeholder="Your Name" onChange={handleChange} className="w-full p-2 rounded text-black" />
-          <input type="email" name="email" placeholder="Your Email" onChange={handleChange} className="w-full p-2 rounded text-black" />
-          <textarea name="message" placeholder="Your Message" rows="4" onChange={handleChange} className="w-full p-2 rounded text-black" />
-          <button type="submit" className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded">Send</button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full p-3 rounded bg-gray-700 text-white"
+          />
+          <input
+            type="email"
+            name="reply_to"
+            placeholder="Your Email"
+            required
+            className="w-full p-3 rounded bg-gray-700 text-white"
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+            rows="5"
+            className="w-full p-3 rounded bg-gray-700 text-white"
+          ></textarea>
+          <input
+            type="hidden"
+            name="time"
+            value={new Date().toLocaleString()}
+          />
+          <button
+            type="submit"
+            className="bg-red-500 hover:bg-red-600 px-5 py-2 rounded text-white w-full"
+          >
+            Send Message
+          </button>
         </form>
+      </div>
+      <div className="text-white text-center mb-6">
+        <p>Email: <a href="mailto:lalitborse1412@gmail.com" className="text-red-400 hover:underline">lalitborse1412@gmail.com</a></p>
+        <p>Phone: <a href="tel:+917249355846" className="text-red-400 hover:underline">+91-7249355846</a></p>
       </div>
     </section>
   );

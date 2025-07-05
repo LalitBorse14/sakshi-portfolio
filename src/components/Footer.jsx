@@ -1,13 +1,17 @@
-import React from 'react';
+import { FaMapMarkerAlt, FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 dark:bg-gray-800 py-6 text-center">
-      <p className="text-gray-700 dark:text-gray-300">© 2025 Lalit Borse. All rights reserved.</p>
-      <div className="mt-2 space-x-4">
-        <a href="https://github.com/LalitBorse14" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">GitHub</a>
-        <a href="https://www.linkedin.com/in/lalitborse" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">LinkedIn</a>
+    <footer className="bg-gray-900 text-white p-6 text-center">
+      <div className="flex justify-center space-x-4 mb-2">
+        <a href="https://github.com/LalitBorse14" target="_blank"><FaGithub className="hover:text-blue-400" /></a>
+        <a href="https://www.linkedin.com/in/lalit-borse-525b68217/" target="_blank"><FaLinkedin className="hover:text-blue-400" /></a>
+        <a href="mailto:lalitborse1412@gmail.com"><FaEnvelope className="hover:text-blue-400" /></a>
       </div>
+      <p className="text-sm flex justify-center items-center">
+        <FaMapMarkerAlt className="mr-1" /> Nashik, Maharashtra, India
+      </p>
+      <p className="text-xs mt-2">© {new Date().getFullYear()} Lalit Borse</p>
     </footer>
   );
 };

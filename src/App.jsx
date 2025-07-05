@@ -10,6 +10,9 @@ import Skills from './components/Skills';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Experience from './components/Experience';
+import Education from './components/Education';
+
 
 function App() {
   useEffect(() => {
@@ -24,9 +27,11 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Projects />
       <Skills />
+      <Experience/>
+      <Projects />
       <Certificates />
+      <Education />
       <Contact />
       <Footer />
     </div>
