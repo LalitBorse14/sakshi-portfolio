@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-10">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Lalit Borse</h1>
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Sakshi Tambe</h1>
           <div className="hidden md:flex space-x-6">
             <a href="#projects" className="text-gray-700 dark:text-gray-200 hover:text-blue-600">Projects</a>
             <a href="#skills" className="text-gray-700 dark:text-gray-200 hover:text-blue-600">Skills</a>

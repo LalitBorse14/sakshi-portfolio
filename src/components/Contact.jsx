@@ -61,8 +61,7 @@ const Contact = () => {
         </form>
       </div>
       <div className="text-white text-center mb-6">
-        <p>Email: <a href="mailto:lalitborse1412@gmail.com" className="text-red-400 hover:underline">lalitborse1412@gmail.com</a></p>
-        <p>Phone: <a href="tel:+917249355846" className="text-red-400 hover:underline">+91-7249355846</a></p>
+        <p>Email: <a href="mailto:sakshi26tambe@gmail.com" className="text-red-400 hover:underline">sakshi26tambe@gmail.com</a></p>
       </div>
     </section>
   );

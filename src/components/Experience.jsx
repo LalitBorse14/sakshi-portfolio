@@ -1,23 +1,47 @@
 import React from 'react';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { FaLaptopCode, FaGraduationCap } from 'react-icons/fa';
 
-const Experience = () => {
+const ExperienceTimeline = () => {
   return (
-    <section id="experience" className="py-20 px-6 bg-gray-800 text-white">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-10 text-red-500">Experience</h2>
-        <ul className="space-y-6">
-          <li>
-            <h3 className="text-xl font-semibold">AWS Cloud Intern @ IRT Technologies PVT. LTD </h3>
-            <p className="text-gray-300">July 2024 ~ Dec 2024</p>
-            <p className="text-gray-400">Deployed cloud infrastructure using AWS services, increasing deployment efficiency by 30%.</p>
-            <p className="text-gray-400">Gained proficiency in AWS tools (EC2, IAM, CloudFormation, etc), enhancing infrastructure management by 25%.</p>
-            <p className="text-gray-400">Created scalable and secure cloud architectures, reducing operational costs by 20%.</p>
-            <p className="text-gray-400">Implemented automation strategies using AWS CloudFormation, resulting in a 40% reduction in manual deployment time.</p>
-          </li>
-        </ul>
-      </div>
+    <section id="experience" className="bg-gray-900 text-white py-20 px-6">
+      <h2 className="text-3xl font-bold text-center mb-10 text-red-500">
+        Experience
+      </h2>
+
+      <VerticalTimeline lineColor="#e11d48">
+        <VerticalTimelineElement
+          date="2024 – Present"
+          iconStyle={{ background: '#e11d48', color: '#fff' }}
+          icon={<FaLaptopCode />}
+        >
+          <h3 className=" text-sm text-gray-500 font-bold text-lg">Frontend Developer Intern</h3>
+          <h4 className="text-sm text-gray-500 hover:text-red-400">7 Stark Marketing | Pune (Remote)</h4>
+          <p className="text-gray-700 dark:text-gray-300 mt-2 hover:text-blue-400">
+            Developed responsive front-end interfaces using HTML, CSS, and React. <br />
+            Optimized APIs and dynamic features using Node.js for seamless user experience.</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+            date="2023 – 2024"
+            iconStyle={{ background: '#3b82f6', color: '#fff' }}
+            icon={<FaLaptopCode />}
+        >
+          <h3 className="text-sm text-gray-500 font-bold text-lg">Web Developer</h3>
+          <h4 className="text-sm text-gray-500 hover:text-red-400">EssenceWeb IT Training & Service. | Nashik</h4>
+          <p className="text-gray-700 dark:text-gray-300 mt-2 hover:text-blue-400">
+            Worked on full-stack web development using HTML, CSS, BootStrap, JQuery, PHP, and CodeIgniter.<br />
+            Built and maintained both front-end and back-end components of web applications.<br />
+            Gained practical experience through real-time project development and debugging.
+          </p>
+        </VerticalTimelineElement>
+      </VerticalTimeline>
     </section>
   );
 };
 
-export default Experience;
+export default ExperienceTimeline;

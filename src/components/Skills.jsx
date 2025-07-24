@@ -2,12 +2,16 @@ import React from 'react';
 
 const Skills = () => {
   const skills = [
-    "AWS EC2", "S3", "IAM", "CloudFormation",
-    "Lambda", "API Gateway", "Docker", "Kubernetes",
-    "OpenShift", "GitHub Actions", "Jenkins", "Terraform",
-    "Ansible", "Linux (Red Hat)", "Windows Admin", "TCP/IP",
-    "DNS", "Routing & Switching", "Python", "JavaScript",
-    "HTML", "CSS", "JS", "Azure (Learning)", "VirtualBox", "VMware"
+    // Frontend
+    'HTML5', 'CSS3', 'Bootstrap', 'JavaScript (ES6+)', 'JQuery', 'React.js', 'Next.js',
+    // Backend & DB
+    'MySQL', 'Node.js', 'Express.js', 'MongoDB' ,
+    // Tools & Platforms
+    'GitHub', 'VS Code', 'Python' , 'JSON' , 'AJAX' ,
+    // Design & Marketing
+    'Canva', 'Figma', 'Digital Marketing',
+    // Others
+    'Responsive Web Design', 'SEO Basics', 'Vercel' , 'Hostinger' , 'GoDaddy'
   ];
 
   return (
